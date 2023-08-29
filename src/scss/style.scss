@@ -112,17 +112,21 @@ body {
   font-weight: 500;
 }
 
-.wrapper {
-  overflow: hidden;
-  padding: 0;
-  padding-top: env("safe-area-inset-top");
+.bg {
   background-image: url("../../public/images/background.webp");
-  background-size: cover;
-  background-attachment: fixed;
   background-position: right top;
   background-repeat: no-repeat;
-  scroll-behavior: smooth;
-  margin: 0;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  transition: background 0.5s ease 0s;
+}
+
+.wrapper {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
   transition: background 0.5s ease 0s;
 }
 
@@ -145,9 +149,9 @@ body {
     width: 75vw;
   }
 }
-//========================================================================================================================================================
+//===MODE================================================================================================================================================
 
-.green .wrapper {
+.green .bg {
   background-image: url("../../public/images/background2.webp");
   background-position: left top;
 }
@@ -164,7 +168,7 @@ body {
   filter: hue-rotate(-120deg);
 }
 
-.yellow .wrapper {
+.yellow .bg {
   background-image: url("../../public/images/background3.webp");
   background-position: left bottom;
 }
