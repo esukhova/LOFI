@@ -1,3 +1,5 @@
+"use strict";
+
 new Swiper(".versions__swiper", {
   navigation: {
     nextEl: ".swiper-button-next",

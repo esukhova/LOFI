@@ -1,3 +1,5 @@
+"use strict";
+
 const htmlElement = document.documentElement;
 
 const pinkButton = document.getElementById("pink");

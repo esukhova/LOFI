@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="LOFI как явление в музыке и культуре. История появления LOFI и Study Girl" />
     <meta name="theme-color" content="#FFC0CB" />
-    <link rel="stylesheet" href="./src/css/style.scss" type="text/css" />
+    <link rel="stylesheet" href="./src/scss/style.scss" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="icon" href="/images/lofigirlsil.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon//apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
     <link rel="preload" href="images/background.webp" as="image" />
     <link rel="preload" href="images/background2.webp" as="image" />
     <link rel="preload" href="images/background3.webp" as="image" />
@@ -333,23 +335,21 @@
                   <legend class="form__item-title">О Вас</legend>
                   <div class="form__input-wrapper">
                     <input
-                      class="form__input _req"
+                      class="form__input _req _name"
                       type="text"
-                      id="name"
+                      id="formName"
                       name="name"
                       placeholder="Гарри Поттер"
-                      required
-                      pattern="^[A-ЯЁ][а-яё]+\s[A-ЯЁ][а-яё]+$"
                     />
-                    <label for="name" class="form__label">Ваше имя и фамилия</label>
+                    <label for="formName" class="form__label">Ваше имя и фамилия</label>
                   </div>
                   <div class="form__input-wrapper">
-                    <input class="form__input _req" type="date" id="date" name="date" required />
-                    <label for="date" class="form__label">Ваша дата рождения</label>
+                    <input class="form__input" type="date" id="formDate" name="date" />
+                    <label for="formDate" class="form__label">Ваша дата рождения</label>
                   </div>
                   <div class="form__input-wrapper">
-                    <input class="form__input _req" type="email" id="email" name="email" required />
-                    <label for="email" class="form__label">Ваша эл. почта</label>
+                    <input class="form__input _req _email" type="text" id="formEmail" name="email" />
+                    <label for="formEmail" class="form__label">Ваша эл. почта</label>
                   </div>
                 </fieldset>
 
@@ -371,19 +371,19 @@
                   <div class="form__label">Вы слушали кого-то из этих исполнителей?</div>
                   <div class="form__checkbox checkbox">
                     <div class="checkbox__item">
-                      <input type="checkbox" class="checkbox__input" id="REM" name="music-band" checked />
+                      <input type="checkbox" class="checkbox__input" id="REM" name="musicband" checked />
                       <label for="REM" class="checkbox__label"><span>R.E.M.</span></label>
                     </div>
                     <div class="checkbox__item">
-                      <input type="checkbox" class="checkbox__input" id="PussyGalore" name="music-band" />
+                      <input type="checkbox" class="checkbox__input" id="PussyGalore" name="musicband" />
                       <label for="PussyGalore" class="checkbox__label"><span>Pussy Galore</span></label>
                     </div>
                     <div class="checkbox__item">
-                      <input type="checkbox" class="checkbox__input" id="BeatHappening" name="music-band" />
+                      <input type="checkbox" class="checkbox__input" id="BeatHappening" name="musicband" />
                       <label for="BeatHappening" class="checkbox__label"><span>Beat Happening</span></label>
                     </div>
                     <div class="checkbox__item">
-                      <input type="checkbox" class="checkbox__input" id="RoyalTrux" name="music-band" />
+                      <input type="checkbox" class="checkbox__input" id="RoyalTrux" name="musicband" />
                       <label for="RoyalTrux" class="checkbox__label"><span>Royal Trux</span></label>
                     </div>
                   </div>
@@ -407,7 +407,7 @@
                   </div>
 
                   <div class="form__input-wrapper">
-                    <textarea class="form__textarea" id="formWhyLofi" name="formWhyLofi">
+                    <textarea class="form__textarea" id="formWhyLofi" name="whyLofi">
 Я считаю Lo-fi  интересным музыкальным и культурным явлением
                     </textarea>
                     <label for="formWhyLofi" class="form__label">Почему Вам нравится/не нравится Lo-fi?</label>
@@ -417,7 +417,7 @@
                 <fieldset class="form__item">
                   <legend class="form__item-title">Ваши музыкальные вкусы</legend>
                   <div class="form__input-wrapper">
-                    <input type="text" class="form__input" id="genre" name="genre" list="genreselect" />
+                    <input type="text" class="form__input" id="formGenre" name="genre" list="genreselect" />
                     <datalist id="genreselect">
                       <option value="Попса"></option>
                       <option value="Рок"></option>
@@ -426,14 +426,23 @@
                       <option value="Электронная музыка"></option>
                       <option value="Фолк"></option>
                     </datalist>
-                    <label for="genre" class="form__label">Ваш любимый жанр музыки:</label>
+                    <label for="formGenre" class="form__label">Ваш любимый жанр музыки:</label>
                   </div>
                   <div class="form__input-wrapper">
-                    <textarea class="form__textarea" id="formWhyGenre" name="formWhyGenre">
+                    <textarea class="form__textarea" id="formWhyGenre" name="whyGenre">
 Эта музыка поднимает мне настроение
                     </textarea>
                     <label for="formWhyGenre" class="form__label">Почему вы предпочитаете этот жанр?</label>
                   </div>
+                </fieldset>
+
+                <fieldset class="form__item form__item_agreement">
+                  <input type="checkbox" class="checkbox__input _req" id="formAgreement" name="agreement" checked />
+                  <label for="formAgreement" class="checkbox__label"
+                    ><span
+                      >Я согласен на обработку персональных данных в соответствии с <a href="#">Условиями*</a></span
+                    ></label
+                  >
                 </fieldset>
 
                 <button class="form__button button-form" type="submit">
